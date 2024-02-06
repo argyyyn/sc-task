@@ -53,6 +53,11 @@ const selectDeliveryType = (delivery, available) => {
   flex-direction: row
   cursor: pointer
   position: relative
+  z-index: 11
+  @media (max-width: 1200px)
+    width: 100%
+    height: 170px
+    padding: 20px
   &.opacity-5
     opacity: .5
   &__content
@@ -65,9 +70,14 @@ const selectDeliveryType = (delivery, available) => {
       font-size: 30px
       font-weight: 700
       color: #283044
+      @media (max-width: 1200px)
+        font-size: 24px
     &__price
       font-size: 40px
       font-weight: 700
       color: #78A1BB
 
+.delivery-types
+  @media (max-width: 1200px)
+    width: 100%
 </style>

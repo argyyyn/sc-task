@@ -23,15 +23,16 @@ watch(() => store.state.deliveryTypes, (newDeliveryTypes) => {
         <h1 class="title">Delivery cost</h1>
         <span class="subtitle">Enter name of the city to count delivery cost</span>
         <Search/>
-        <RightsReserved/>
       </div>
       <div class="col-md-6">
-        <div class="type-container">
-          <DeliveryTypes v-if="deliveryTypes.length" :data="deliveryTypes"/>
-          <CarBig v-else/>
+        <div v-if="deliveryTypes.length" class="type-container">
+          <DeliveryTypes :data="deliveryTypes"/>
         </div>
+        <CarBig v-else/>
       </div>
     </div>
+    <RightsReserved/>
+
   </div>
 
 </template>
@@ -56,4 +57,14 @@ watch(() => store.state.deliveryTypes, (newDeliveryTypes) => {
   flex-direction: column
   width: 100%
   height: 100%
+  position: relative
+  @media (max-width: 1200px)
+    &::after
+      width: calc(100% + 30px)
+      height: calc(100% + 30px)
+      content: ''
+      background-color: #F7F7F7
+      position: absolute
+      top: -15px
+      left: -15px
 </style>
